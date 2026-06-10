@@ -1,99 +1,51 @@
 import React from 'react';
-import { ArrowRight, Newspaper, Layers, TrendingUp } from 'lucide-react';
-// Note: If you have shadcn button, import it here:
+// If using actual Shadcn UI, you would import your button like this:
 // import { Button } from "@/components/ui/button"
+// I've included a styled Tailwind button below to keep it self-contained!
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
-      {/* Subtle Background Grid Pattern */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-white">
+      {/* Background Subtle Gradient Glows */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#004aad]/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-[#00bbff]/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Text Content */}
-          <div className="flex flex-col space-y-6 lg:col-span-7 text-center lg:text-left">
-            {/* Tag/Badge */}
-            <div className="inline-flex items-center self-center lg:self-start space-x-2 bg-muted px-3 py-1 rounded-full text-sm font-medium border border-border">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-              <span>The Blueprint of Modern Construction</span>
-            </div>
+      {/* Grid Overlay for Tech/Modern Vibe */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-              Shaping the Future of <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Precast Concrete</span>
-            </h1>
+      <div className="relative max-w-5xl mx-auto px-6 py-32 text-center z-10">
+        {/* Animated Badge */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1b79ee]/30 bg-[#004aad]/10 text-[#00bbff] text-sm font-medium mb-6 animate-fade-in backdrop-blur-sm">
+          <span className="w-2 h-2 rounded-full bg-[#00bbff] animate-pulse" />
+          Pushing Beyond Boundaries
+        </div>
 
-            {/* Subtext */}
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-              Your definitive source for global precast concrete news, modular engineering breakthroughs, smart supply chain tracking, and sustainable mix designs.
-            </p>
+        {/* Main Heading */}
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-slate-200 to-[#00bbff] bg-clip-text text-transparent">
+          Trench-Unlimited
+        </h1>
 
-            {/* CTA Buttons (Shadcn Style) */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <button className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-8 rounded-md bg-primary text-primary-foreground font-medium shadow hover:bg-primary/90 transition-colors">
-                Latest News
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-              <button className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-8 rounded-md border border-input bg-background font-medium shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors">
-                Explore Analytics
-              </button>
-            </div>
+        {/* Subtitle */}
+        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Deep engineering meets limitless scale. We dig into the toughest tech infrastructure challenges so your business can perform without boundaries.
+        </p>
 
-            {/* Mini Trust/Feature Badges */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border/60 text-left">
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2 text-primary">
-                  <Newspaper className="h-5 w-5" />
-                  <span className="font-semibold text-foreground">Daily Feed</span>
-                </div>
-                <p className="text-xs text-muted-foreground hidden sm:block">Real-time industry briefings.</p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2 text-primary">
-                  <Layers className="h-5 w-5" />
-                  <span className="font-semibold text-foreground">Tech Trends</span>
-                </div>
-                <p className="text-xs text-muted-foreground hidden sm:block">Modular & 3D printing insights.</p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2 text-primary">
-                  <TrendingUp className="h-5 w-5" />
-                  <span className="font-semibold text-foreground">Market Data</span>
-                </div>
-                <p className="text-xs text-muted-foreground hidden sm:block">Supply costs & volume indices.</p>
-              </div>
-            </div>
-          </div>
+        {/* Action Buttons (Shadcn style layouts) */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* Primary Button */}
+          <button className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-8 rounded-md text-sm font-medium transition-colors bg-[#1b79ee] hover:bg-[#004aad] text-white shadow-[0_0_20px_rgba(27,121,238,0.4)] hover:shadow-[0_0_25px_rgba(0,74,173,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00bbff]">
+            Get Started
+          </button>
 
-          {/* Right Visual Graphic (Modern Concrete / Architectural Vibe) */}
-          <div className="lg:col-span-5 relative w-full aspect-square max-w-[450px] mx-auto lg:max-w-none">
-            {/* Geometric Accent Blocks resembling precast slabs */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-muted to-muted/20 rounded-2xl border border-border/80 shadow-inner flex items-center justify-center overflow-hidden">
-              <div className="absolute top-10 left-10 w-40 h-40 bg-primary/10 rounded-lg transform -rotate-12 border border-primary/20 blur-[1px]" />
-              <div className="absolute bottom-12 right-12 w-52 h-32 bg-foreground/5 rounded-lg transform rotate-6 border border-foreground/10 flex items-end p-4">
-                <div className="w-full space-y-2">
-                  <div className="h-2 w-2/3 bg-foreground/20 rounded" />
-                  <div className="h-2 w-1/2 bg-foreground/10 rounded" />
-                </div>
-              </div>
-              
-              {/* Central Abstract Logo/Icon graphic */}
-              <div className="relative z-10 bg-background/80 backdrop-blur-md p-6 rounded-xl border border-border shadow-xl flex flex-col items-center space-y-2">
-                <div className="grid grid-cols-2 gap-1 w-12 h-12">
-                  <div className="bg-primary rounded-sm" />
-                  <div className="bg-primary/60 rounded-sm" />
-                  <div className="bg-primary/40 rounded-sm" />
-                  <div className="bg-primary/80 rounded-sm" />
-                </div>
-                <span className="text-sm font-bold tracking-wider uppercase text-muted-foreground">PRECAST</span>
-              </div>
-            </div>
-          </div>
-
+          {/* Secondary Outline Button */}
+          <button className="w-full sm:w-auto inline-flex items-center justify-center h-11 px-8 rounded-md text-sm font-medium transition-colors border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00bbff]">
+            Learn More
+          </button>
         </div>
       </div>
-    </section>
+
+      {/* Bottom Border Accent Line */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1b79ee]/40 to-transparent" />
+    </div>
   );
 }
